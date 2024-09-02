@@ -31,8 +31,8 @@ export default function Home() {
       <MaxWidthWrapper>
         <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Hey come and join us to remove{" "}
-            <span className="text-blue-600">items from your wishlist</span>.
+            {"Find the stuff you like in the"}
+            <span className=""> moment </span>
           </h1>
           <p className="mt-6 text-lg max-w-prose text-muted-foreground">
             Hey! We are the moment and live in the moment. This is a shop where
@@ -51,7 +51,7 @@ export default function Home() {
         <ProductReel
           query={{ sort: "desc", limit: 4 }}
           href="/products?sort=recent"
-          title="Just in"
+          title="This just came in"
         />
       </MaxWidthWrapper>
 

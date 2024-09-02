@@ -49,7 +49,7 @@ const Navbar = async () => {
                   {user ? null : (
                     <Link
                       href="/sign-in"
-                      className="group flex items-center px-3 h-10 sm:h-12 w-auto max-w-xs sm:max-w-max rounded-full border border-[#aeab7b] font-medium text-base outline-none focus:scale-110 hover:scale-110 hover:bg-[#aeab7b] hover:text-[#F3F1EB] active:scale-105 transition"
+                      className="group flex items-center px-3 h-6 sm:h-9 w-auto max-w-xs sm:max-w-max rounded-full border border-[#1D1D1F] font-medium text-sm outline-none focus:scale-110 hover:scale-110 hover:bg-[#1D1D1F] hover:text-[#F3F1EB] active:scale-105 transition"
                     >
                       sign in
                       <BsArrowRight className="ml-1.5 -translate-x-1 opacity-75 group-hover:translate-x-2 group-hover:text-[#F3F1EB] transition" />
@@ -65,7 +65,7 @@ const Navbar = async () => {
                   ) : (
                     <Link
                       href="/sign-up"
-                      className="group flex items-center px-3 h-10 sm:h-12 w-auto max-w-xs sm:max-w-max rounded-full border border-[#aeab7b] font-medium text-base outline-none focus:scale-110 hover:scale-110 hover:bg-[#aeab7b] hover:text-[#F3F1EB] active:scale-105 transition"
+                      className="group flex items-center px-3 h-6 sm:h-9 w-auto max-w-xs sm:max-w-max rounded-full border border-[#1D1D1F] font-medium text-sm outline-none focus:scale-110 hover:scale-110 hover:bg-[#1D1D1F] hover:text-[#F3F1EB] active:scale-105 transition"
                     >
                       sign up
                       <BsArrowRight className="ml-1.5 -translate-x-1 opacity-75 group-hover:translate-x-2 group-hover:text-[#F3F1EB] transition" />
