@@ -21,24 +21,20 @@ const Navbar = async () => {
           <div className="border-b border-gray-200">
             <div className="flex h-16 items-center">
               <MobileNav />
+              <div className="flex flex-row items-center">
+                <div className="ml-4 flex lg:ml-0 rounded hover:bg-gray-200 pb-1">
+                  <Link href="/" className="font-bold text-2xl uppercase ">
+                    moment
+                  </Link>
+                </div>
 
-              <div className="ml-4 flex lg:ml-0">
-                <Link href="/">
-                  <Image
-                    src="/hey.jpg"
-                    width={100}
-                    height={100}
-                    className="h-10 w-10 rounded-[12.5px]"
-                    alt="moment image"
-                  />
-                </Link>
-              </div>
-
-              <div className="hidden z-50 lg:ml-8 lg:block lg:self-stretch">
-                <div className="flex items-center">
-                  <div className="relative flex items-center justify-center">
-                    <Link href="/" className="flex items-center">
-                      <button className="flex items-center">hi</button>
+                <div className="hidden lg:ml-12 lg:block lg:self-stretch">
+                  <div className="flex flex-row gap-8 pt-2 font-semibold text-muted-foreground ">
+                    <Link href="/products">
+                      <button>the shop</button>
+                    </Link>
+                    <Link href="/">
+                      <button>other</button>
                     </Link>
                   </div>
                 </div>
@@ -52,7 +48,6 @@ const Navbar = async () => {
                       className="group flex items-center px-3 h-6 sm:h-9 w-auto max-w-xs sm:max-w-max rounded-full border border-[#1D1D1F] font-medium text-sm outline-none focus:scale-110 hover:scale-110 hover:bg-[#1D1D1F] hover:text-[#F3F1EB] active:scale-105 transition"
                     >
                       sign in
-                      <BsArrowRight className="ml-1.5 -translate-x-1 opacity-75 group-hover:translate-x-2 group-hover:text-[#F3F1EB] transition" />
                     </Link>
                   )}
 
@@ -68,7 +63,6 @@ const Navbar = async () => {
                       className="group flex items-center px-3 h-6 sm:h-9 w-auto max-w-xs sm:max-w-max rounded-full border border-[#1D1D1F] font-medium text-sm outline-none focus:scale-110 hover:scale-110 hover:bg-[#1D1D1F] hover:text-[#F3F1EB] active:scale-105 transition"
                     >
                       sign up
-                      <BsArrowRight className="ml-1.5 -translate-x-1 opacity-75 group-hover:translate-x-2 group-hover:text-[#F3F1EB] transition" />
                     </Link>
                   )}
 

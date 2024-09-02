@@ -9,6 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { BsExclamation } from "react-icons/bs";
 
 import {
   AuthCredentialsValidator,
@@ -74,16 +75,13 @@ const Page = () => {
     <>
       <div className="container relative flex pt-20 flex-col items-center justify-center lg:px-0">
         <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
-          <div className="flex flex-col items-center text-center">
+          <div className="flex flex-col items-center  space-y-2 text-center">
             <h1 className="text-3xl font-bold tracking-tight">
               Sign in to your {isSeller ? "seller" : ""} account
             </h1>
 
             <Link
-              className={buttonVariants({
-                variant: "link",
-                className: "gap-1.5",
-              })}
+              className="flex flex-row gap-1 text-sm hover:text-blue-700"
               href="/sign-up"
             >
               Haven&apos;t registered an account yet?
@@ -95,7 +93,9 @@ const Page = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid gap-2">
                 <div className="grid gap-1 py-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email" className="font-bold">
+                    Your email
+                  </Label>
                   <Input
                     {...register("email")}
                     className={cn({
@@ -111,7 +111,9 @@ const Page = () => {
                 </div>
 
                 <div className="grid gap-1 py-2">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password" className="font-bold">
+                    Your password
+                  </Label>
                   <Input
                     {...register("password")}
                     type="password"
@@ -170,6 +172,12 @@ const Page = () => {
                 Continue as seller
               </Button>
             )}
+            <div className="flex flex-row justify-center items-center">
+              <BsExclamation />
+              <span className="text-xs text-muted-foreground">
+                note that the authentication is still under development
+              </span>
+            </div>
           </div>
         </div>
       </div>
