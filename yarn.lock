@@ -1235,7 +1235,7 @@
   resolved "https://registry.npmjs.org/@one-ini/wasm/-/wasm-0.1.1.tgz"
   integrity sha512-XuySG1E38YScSJoMlqovLru4KTUNSjgVTIjyh7qMX6aNN5HY5Ct5LhRJdxO79JtTzKfzV/bnWpz+zquYrISsvw==
 
-"@payloadcms/bundler-webpack@^1.0.7":
+"@payloadcms/bundler-webpack@^1.0.3":
   version "1.0.7"
   resolved "https://registry.npmjs.org/@payloadcms/bundler-webpack/-/bundler-webpack-1.0.7.tgz"
   integrity sha512-2ARLDX+2JkUeslkELTxzJmcHbQeyPnjIKAVUCNAu7/gVo0eSlKaiNMUmKWfuXVfbNlcvQEcjH7b7uTqkbrrWZA==
@@ -1266,7 +1266,7 @@
     webpack-dev-middleware "6.1.2"
     webpack-hot-middleware "^2.25.3"
 
-"@payloadcms/db-mongodb@^1.7.2":
+"@payloadcms/db-mongodb@^1.0.3":
   version "1.7.2"
   resolved "https://registry.npmjs.org/@payloadcms/db-mongodb/-/db-mongodb-1.7.2.tgz"
   integrity sha512-C2qlhDE7EBgr+2dZvjj6aqdIBWDWdKb508O7+RQEXijNHYSUxC3VXxI21WBhRcFehBXU5WpYrFBxtU3CPJEmAw==
@@ -1281,14 +1281,15 @@
     prompts "2.4.2"
     uuid "9.0.0"
 
-"@payloadcms/richtext-slate@^1.5.2":
-  version "1.5.2"
-  resolved "https://registry.npmjs.org/@payloadcms/richtext-slate/-/richtext-slate-1.5.2.tgz"
-  integrity sha512-0rq9zgOhpPHO5kcFlajld3h5beww6jjYwHZH5sxgtuen3bz6pepIr3agg650R/aE1+sfez0NdpwoB0gb7FX03g==
+"@payloadcms/richtext-slate@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/@payloadcms/richtext-slate/-/richtext-slate-1.0.4.tgz"
+  integrity sha512-sQfVIwBIgErUPkz7Jqv7aVckAlH7JH4qBHzGgcuOhWKpDm2T/uQS/06RDvl9ww0t8srGv9zYkDtPEfeg5ccx0g==
   dependencies:
     "@faceless-ui/modal" "2.0.1"
     i18next "22.5.1"
     is-hotkey "0.2.0"
+    react "18.2.0"
     react-i18next "11.18.6"
     slate "0.91.4"
     slate-history "0.86.0"
@@ -6986,7 +6987,7 @@ pause@0.0.1:
   resolved "https://registry.npmjs.org/pause/-/pause-0.0.1.tgz"
   integrity sha512-KG8UEiEVkR3wGEb4m5yZkVCzigAD+cVEJck2CzYZO37ZGJfctvVptVO192MwrtPhzONn6go8ylnOdMhKqi4nfg==
 
-payload@^2.0.0, payload@^2.27.0, payload@^2.3.0:
+payload@^2.0.0, payload@^2.27.0:
   version "2.27.0"
   resolved "https://registry.npmjs.org/payload/-/payload-2.27.0.tgz"
   integrity sha512-SH75Sae1AfuczYK5vHGbIEVxKFmqUb2/LTEtBjh+sEc/I0R0y1KMfwojdXR6lXTrQCeG5ekLhfi1D5+CBjxezg==
