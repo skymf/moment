@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { privateProcedure, publicProcedure, router } from "./trpc";
+import { privateProcedure, router } from "./trpc";
 import { TRPCError } from "@trpc/server";
 import { getPayloadClient } from "../get-payload";
 import { stripe } from "../lib/stripe";
@@ -10,7 +10,7 @@ export const paymentRouter = router({
     .input(z.object({ productIds: z.array(z.string()) }))
     .mutation(async ({ ctx, input }) => {
       const { user } = ctx;
-      let { productIds } = input;
+      const { productIds } = input;
 
       if (productIds.length === 0) {
         throw new TRPCError({ code: "BAD_REQUEST" });
@@ -47,6 +47,7 @@ export const paymentRouter = router({
         });
       });
 
+      // Example static product addition
       line_items.push({
         price: "price_1OCeBwA19umTXGu8s4p2G3aX",
         quantity: 1,
@@ -68,11 +69,13 @@ export const paymentRouter = router({
           line_items,
         });
 
-        return { url: stripeSession.url };
+        return { url: stripeSession.url ?? null };
       } catch (err) {
+        console.error("Error creating Stripe session:", err);
         return { url: null };
       }
     }),
+
   pollOrderStatus: privateProcedure
     .input(z.object({ orderId: z.string() }))
     .query(async ({ input }) => {
