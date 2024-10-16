@@ -33,7 +33,7 @@ export const paymentRouter = router({
         collection: "orders",
         data: {
           _isPaid: false,
-          products: filteredProducts.map((prod) => prod.id),
+          products: filteredProducts.map((prod) => prod.id as string),
           user: user.id,
         },
       });
@@ -41,10 +41,12 @@ export const paymentRouter = router({
       const line_items: Stripe.Checkout.SessionCreateParams.LineItem[] = [];
 
       filteredProducts.forEach((product) => {
-        line_items.push({
-          price: product.priceId!,
-          quantity: 1,
-        });
+        if (typeof product.priceId === "string") {
+          line_items.push({
+            price: product.priceId,
+            quantity: 1,
+          });
+        }        
       });
 
       line_items.push({

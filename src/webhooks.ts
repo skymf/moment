@@ -82,18 +82,22 @@ export const stripeWebhookHandler = async (
       },
     });
 
+    // fix
+    const email = user.email as string;
+    const htmlContent = await ReceiptEmailHtml({
+      date: new Date(),
+      email: email,
+      orderId: session.metadata.orderId,
+      products: order.products as Product[],
+    })
+
     // send receipt
     try {
       const data = await resend.emails.send({
         from: "DigitalHippo <hello@joshtriedcoding.com>",
-        to: [user.email],
+        to: [email],
         subject: "Thanks for your order! This is your receipt.",
-        html: ReceiptEmailHtml({
-          date: new Date(),
-          email: user.email,
-          orderId: session.metadata.orderId,
-          products: order.products as Product[],
-        }),
+        html: htmlContent,
       });
       res.status(200).json({ data });
     } catch (error) {
