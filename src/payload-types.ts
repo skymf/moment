@@ -18,6 +18,7 @@ export interface Config {
   };
   globals: {};
 }
+
 export interface User {
   id: string;
   products?: (string | Product)[] | null;
@@ -36,6 +37,7 @@ export interface User {
   lockUntil?: string | null;
   password: string | null;
 }
+
 export interface Product {
   id: string;
   user?: (string | null) | User;
@@ -54,6 +56,7 @@ export interface Product {
   updatedAt: string;
   createdAt: string;
 }
+
 export interface ProductFile {
   id: string;
   user?: (string | null) | User;
@@ -66,6 +69,7 @@ export interface ProductFile {
   width?: number | null;
   height?: number | null;
 }
+
 export interface Media {
   id: string;
   user?: (string | null) | User;
@@ -104,6 +108,7 @@ export interface Media {
     };
   };
 }
+
 export interface Order {
   id: string;
   _isPaid: boolean;
@@ -112,6 +117,7 @@ export interface Order {
   updatedAt: string;
   createdAt: string;
 }
+
 export interface PayloadPreference {
   id: string;
   user: {
@@ -131,6 +137,7 @@ export interface PayloadPreference {
   updatedAt: string;
   createdAt: string;
 }
+
 export interface PayloadMigration {
   id: string;
   name?: string | null;
@@ -140,5 +147,16 @@ export interface PayloadMigration {
 }
 
 declare module "payload" {
-  export interface GeneratedTypes extends Config {}
+  export interface Config {
+    collections: {
+      users: User;
+      products: Product;
+      media: Media;
+      product_files: ProductFile;
+      orders: Order;
+      "payload-preferences": PayloadPreference;
+      "payload-migrations": PayloadMigration;
+    };
+    globals: {};
+  }
 }

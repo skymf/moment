@@ -38,6 +38,10 @@ export const getPayloadClient = async ({
     throw new Error("PAYLOAD_SECRET is missing");
   }
 
+  if (!process.env.MONGODB_URL) {
+    throw new Error("MONGODB_URL is missing");
+  }
+
   if (cached.client) {
     return cached.client;
   }
@@ -50,6 +54,7 @@ export const getPayloadClient = async ({
         fromName: "hey",
       },
       secret: process.env.PAYLOAD_SECRET,
+      mongoURL: process.env.MONGODB_URL,
       local: initOptions?.express ? false : true,
       ...(initOptions || {}),
     });
