@@ -5,19 +5,17 @@ let mongoServer: MongoMemoryServer;
 let mongoClient: MongoClient;
 
 export async function setupMongoDB() {
-  const useInMemory = process.env.USE_IN_MEMORY_MONGO === "true";
-  let mongoUri: string;
+  const mongoUri = process.env.MONGODB_URL;
 
-  if (useInMemory) {
-    mongoServer = await MongoMemoryServer.create();
-    mongoUri = mongoServer.getUri();
-  } else {
-    mongoUri =
-      process.env.MONGODB_URI || "mongodb://localhost:27017/your_database_name";
+  if (!mongoUri) {
+    throw new Error("MONGODB_URL is missing in environment variables");
   }
 
-  mongoClient = new MongoClient(mongoUri);
+  console.log("MongoDB URI:", mongoUri); // Log the URI for debugging
+
+  const mongoClient = new MongoClient(mongoUri);
   await mongoClient.connect();
+
   return mongoClient.db();
 }
 

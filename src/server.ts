@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import path from "path";
+import { setupMongoDB } from "./config/mongoSetup";
 
 // Load environment variables
 dotenv.config({
@@ -39,6 +40,9 @@ export type WebhookRequest = IncomingMessage & {
 };
 
 const start = async () => {
+  // Setup MongoDB (either in-memory or real)
+  await setupMongoDB();
+
   const webhookMiddleware = bodyParser.json({
     verify: (req: WebhookRequest, _, buffer) => {
       req.rawBody = buffer;

@@ -1,12 +1,7 @@
-import dotenv from "dotenv";
 import path from "path";
 import type { InitOptions } from "payload/config";
 import payload, { Payload } from "payload";
 import nodemailer from "nodemailer";
-
-dotenv.config({
-  path: path.resolve(__dirname, "../.env"),
-});
 
 const transporter = nodemailer.createTransport({
   host: "smtp.resend.com",
@@ -54,7 +49,6 @@ export const getPayloadClient = async ({
         fromName: "hey",
       },
       secret: process.env.PAYLOAD_SECRET,
-      mongoURL: process.env.MONGODB_URL,
       local: initOptions?.express ? false : true,
       ...(initOptions || {}),
     });
